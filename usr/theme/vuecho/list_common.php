@@ -36,7 +36,7 @@ foreach ($tmpGroups as $name => $g) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo esc($listTitle . ' - ' . $siteTitle); ?></title>
 <meta name="description" content="<?php echo esc($GLOBALS['__rye_seo']['desc'] ?? ''); ?>">
-<link rel="icon" href="<?php echo baseUrl('assets/img/logo-512.png'); ?>">
+<link rel="icon" href="<?php echo $brandLogo; ?>">
 <link rel="stylesheet" href="<?php echo $themeCss; ?>">
 <?php echo doHook('header'); ?>
 </head>

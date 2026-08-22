@@ -46,7 +46,7 @@ $readMin   = max(1, (int)ceil($readChars / 400));
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo esc(L($post, 'title') . ' - ' . $siteTitle); ?></title>
 <meta name="description" content="<?php echo esc(postSeoDescription($post)); ?>">
-<link rel="icon" href="<?php echo baseUrl('assets/img/logo-512.png'); ?>">
+<link rel="icon" href="<?php echo $brandLogo; ?>">
 <link rel="stylesheet" href="<?php echo $themeCss; ?>">
 <?php echo doHook('header'); ?>
 </head>

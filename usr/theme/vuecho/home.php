@@ -16,7 +16,6 @@ $seoDesc   = siteSeoDescription() ?: ($slogan ?: $siteTitle);
 $heroTitle = getOption('hero_title', $siteTitle);
 $heroSub   = getOption('hero_subtitle', __('技术文档 · 教程 · 手册 · 快速上手指南'));
 $heroBadge = getOption('hero_badge', __('文档 v1 · 持续更新'));
-$logoUrl   = baseUrl('assets/img/logo-512.png');
 // Hero 区品牌 logo：后台 hero_logo / site_logo 可配；fallback 通用 RyeBlog logo
 $logoBase = getOption('hero_logo', getOption('site_logo', 'assets/img/logo-512.png'));
 $heroLogoUrl = baseUrl($logoBase . (strpos($logoBase, '?') !== false ? '&' : '?') . 'v=' . (@filemtime(RYEBLOG_ROOT . '/' . $logoBase) ?: '1'));
@@ -37,7 +36,7 @@ $themeJs   = baseUrl('usr/theme/vuecho/theme.js?v=' . (@filemtime(__DIR__ . '/th
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo esc($heroTitle . ' - ' . $siteTitle); ?></title>
 <meta name="description" content="<?php echo esc($seoDesc); ?>">
-<link rel="icon" href="<?php echo $logoUrl; ?>">
+<link rel="icon" href="<?php echo $heroLogoUrl; ?>">
 <link rel="stylesheet" href="<?php echo $themeCss; ?>">
 <?php echo doHook('header'); ?>
 </head>

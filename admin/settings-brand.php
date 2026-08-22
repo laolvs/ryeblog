@@ -8,6 +8,7 @@ require_once __DIR__ . '/admin.php';
 $ok = '';
 $keys = [
     'site_title','site_title_en','site_slogan','site_slogan_en','site_url',
+    'hero_logo',
     'home_hero',
     'hero_subtitle','hero_btn1_text','hero_btn1_url','hero_btn2_text','hero_btn2_url',
     'feature_1_title','feature_1_desc','feature_2_title','feature_2_desc','feature_3_title','feature_3_desc',
@@ -43,6 +44,15 @@ adminHead(__('品牌与主页'), 'settings-brand.php');
     <?php endif; ?>
     <label><?php echo __('官方网址'); ?></label>
     <input type="text" name="site_url" value="<?php echo optVal('site_url','https://ryeblog.com/'); ?>">
+    <label><?php echo __('品牌 Logo（顶部 / Hero / favicon）'); ?></label>
+    <div class="upload-row">
+        <input type="text" name="hero_logo" id="hero_logo_input" value="<?php echo optVal('hero_logo'); ?>" placeholder="<?php echo __('留空 = RyeBlog 默认 logo；建议放主题 assets 下不会被核心部署覆盖'); ?>" style="flex:1">
+        <label class="btn btn-ghost btn-sm" style="cursor:pointer">📷 <?php echo __('上传 Logo'); ?>
+            <input type="file" data-upload-to="hero_logo_input" data-preview="hero_logo_preview" accept="image/*" style="display:none">
+        </label>
+    </div>
+    <div id="hero_logo_preview" style="margin:6px 0"><?php $lg = trim(getOption('hero_logo','')); if ($lg !== '') echo '<img src="' . esc(baseUrl($lg)) . '" style="height:48px;border:1px solid var(--line);object-fit:contain;background:#fff;border-radius:4px">'; ?></div>
+
     <label><?php echo __('首页宣传区（Hero）'); ?></label>
     <select name="home_hero">
         <option value="1" <?php echo getOption('home_hero','1')==='1'?'selected':''; ?>><?php echo __('显示（RyeBlog 宣传横幅）'); ?></option>
