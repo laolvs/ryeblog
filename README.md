@@ -151,6 +151,8 @@ ryeblog/
 | 入口 | 地址 |
 |---|---|
 | 官方网站 | https://ryeblog.com |
+| 源码仓库（GitHub） | https://github.com/laolvs/ryeblog |
+| 源码镜像（Gitee，国内加速） | https://gitee.com/laolvs/ryeblog |
 | 百万级演示站 | https://teayear.com （1,702,561 篇文章） |
 | 主题切换演示 | https://demo.ryeblog.com （顶部切换 12+ 主题） |
 | 知识库/文档 | https://ryeblog.com/category/knowledge |
