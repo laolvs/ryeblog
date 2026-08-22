@@ -792,6 +792,20 @@ function getPosts($opts = [])
     $page  = max(1, min((int)$opts['page'], $pages));
     $offset = ($page - 1) * $perPage;
 
+    // 深分页尾部反转：页码落在结果集后半段时，改为「升序取尾部窗口再反转」。
+    // OFFSET 是线性扫描，尾部页（如 teayear 170 万篇的第 85129 页）实测 88s；
+    // 反转后从索引另一端进入，尾页 OFFSET≈0，毫秒级返回。
+    $flip = false;
+    $limit = $perPage;
+    if ($opts['tag'] === null && $opts['search'] === null
+        && $opts['orderBy'] === 'p.created_at DESC' && $offset > 0
+        && ($total - $offset) < ($offset + $perPage)) {
+        $flipCnt = max(1, $total - $offset);          // 本页实际行数（末页不足 perPage）
+        $offset  = max(0, $total - $offset - $flipCnt); // 从升序端看的偏移
+        $limit   = $flipCnt;
+        $flip    = true;
+    }
+
     // 英文列仅双语模式存在（纯中文库无 *_en 列），动态拼接
     $enCat = bilingualEnabled() ? ', c.name_en AS category_name_en' : '';
 
@@ -810,12 +824,16 @@ function getPosts($opts = [])
         $orderBySql = 'MATCH(p.title) AGAINST (?) DESC';
         $params[] = $opts['search'];
     }
+    if ($flip) {
+        // 尾部反转：升序取窗口，取回后再 array_reverse 恢复降序
+        $orderBySql = 'p.created_at ASC';
+    }
     $sql = "SELECT p.*, c.name AS category_name$enCat, c.slug AS category_slug
             FROM vd_posts p$idxHint$tagJoin
             LEFT JOIN vd_categories c ON c.id = p.category_id
             WHERE $whereSql
             ORDER BY $orderBySql
-            LIMIT $perPage OFFSET $offset";
+            LIMIT $limit OFFSET $offset";
 
     // 搜索结果 items 缓存（P2：同词+同页 10 分钟；键带 content_rev，发文章即实时失效）
     if ($searchMatch) {
@@ -825,6 +843,10 @@ function getPosts($opts = [])
         });
     } else {
         $items = dbAll($sql, $params);
+    }
+    // 尾部反转：按升序取回的窗口反转为降序，保证列表顺序与正常分页一致
+    if ($flip && $items) {
+        $items = array_reverse($items);
     }
 
     // 批量加载标签（withTags=true 时一次 IN 查询，消除每篇文章的 N+1 标签查询）
@@ -1477,7 +1499,8 @@ function homeUrl()
 function homePageUrl($i)
 {
     if ((int)$i <= 1) return homeUrl();
-    return prettyOn() ? langBase() . '/?p=' . (int)$i : withLang(baseUrl('?p=' . (int)$i));
+    // 注意用 paged 而非 p：?p=<数字> 已保留给 WordPress 老链接文章直链（见 index.php）
+    return prettyOn() ? langBase() . '/?paged=' . (int)$i : withLang(baseUrl('?paged=' . (int)$i));
 }
 
 /**

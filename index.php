@@ -8,9 +8,27 @@ if (!db()) { header('Location: ' . baseUrl('install.php')); exit; }
 // 双语模式：无前缀请求统一 301 → /cn/（含根路径、分页、query）；纯中文模式不动
 enforceLangPrefix();
 enforceMaintenance();
+
+// WordPress 老链接兼容：导入站（如 teayear，170 万 WP 文章）的历史外链为 /?p=<文章id>，
+// 原先与首页分页参数冲突——?p=85129 被当成第 85129 页触发深分页（LIMIT 20 OFFSET 170 万，88s 超时）。
+// 现分页统一改用 ?paged=，?p=<数字> 恢复文章直链语义：与 /post/<数字> 一致（slug 优先、id 回退），301 到规范 URL。
+if (isset($_GET['p']) && preg_match('/^\d{1,10}$/', (string)$_GET['p'])) {
+    $wpId = (string)(int)$_GET['p'];
+    $wpPost = getPost($wpId, true) ?: getPost((int)$wpId);
+    if ($wpPost) {
+        header('Location: ' . postUrl($wpPost), true, 301);
+    } else {
+        http_response_code(404);
+        publicHeader(__('文章不存在'));
+        echo '<div class="empty-box"><p>' . __('没有找到这篇文章。') . '</p></div>';
+        publicFooter();
+    }
+    exit;
+}
+
 pageCacheStart(); // 整页缓存（后台开关 page_cache；命中直接输出）
 
-$page = max(1, (int)($_GET['p'] ?? 1));
+$page = max(1, (int)($_GET['paged'] ?? $_GET['page'] ?? 1));
 $result = getPosts(['page' => $page, 'perPage' => postsPerPage(), 'withTags' => true]);
 $posts = $result['items'];
 
