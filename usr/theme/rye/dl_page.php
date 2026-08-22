@@ -8,8 +8,9 @@
     $btnDocUrl      = getOption('rye_doc_url', baseUrl('category/docs.html'));
     $themeCss  = baseUrl('usr/theme/rye/theme.css?v=' . (@filemtime(__DIR__ . '/theme.css') ?: '1'));
     $brandLogo = baseUrl('assets/img/logo-512.png');
-    $dlZip = baseUrl('download/ryeblog-' . RYEBLOG_VERSION . '.zip');
-    $dlSize = 2081906; // 2.0.0 包大小（字节），随版本可更新
+    $ghRepo = 'https://github.com/laolvs/ryeblog';
+    $dlZip = $ghRepo . '/releases/download/v' . RYEBLOG_VERSION . '/ryeblog-' . RYEBLOG_VERSION . '.zip';
+    $dlSize = 2908297; // 1.4.2 包大小（字节），随版本可更新
     $sizeTxt = $dlSize > 1048576 ? round($dlSize / 1048576, 1) . ' MB' : round($dlSize / 1024) . ' KB';
     $topMenus = array_values(array_filter(getMenus('top'), function ($m) { return trim($m['title']) !== '首页'; }));
     // 版本更新记录：按「版本更新」分类（slug=updates）取最近 5 篇
@@ -48,6 +49,8 @@ body.theme-rye .dl-btn { display:inline-flex; align-items:center; justify-conten
 body.theme-rye .dl-btn:hover { transform:translateY(-2px); }
 body.theme-rye .dl-card.main .dl-btn { background:#fff; color:#11603a; box-shadow:0 8px 22px rgba(0,0,0,.18); }
 body.theme-rye .dl-card.main .dl-btn:hover { box-shadow:0 12px 30px rgba(0,0,0,.28); }
+body.theme-rye .dl-card.main .gh-btn { background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.45); margin-left:10px; }
+body.theme-rye .dl-card.main .gh-btn:hover { background:rgba(255,255,255,.24); }
 body.theme-rye .dl-card.ghost .dl-btn { background:var(--rye-050,#e8f8f0); color:var(--rye-700,#2d8a5f); }
 body.theme-rye .dl-steps { background:#fff; border:1px solid var(--line,#eaecef); border-radius:16px; padding:26px 30px; box-shadow:var(--shadow); margin-bottom:18px; }
 body.theme-rye .dl-steps h2 { font-size:18px; font-weight:700; color:var(--rye-900,#1b5e46); margin:0 0 16px; }
@@ -108,9 +111,10 @@ body.theme-rye .dl-updates-more:hover { text-decoration:underline; }
         <div class="dl-card main">
             <div class="dl-type">RyeBlog 核心</div>
             <h3>v<?php echo esc(RYEBLOG_VERSION); ?></h3>
-            <div class="dl-meta">安装包 · <?php echo $sizeTxt; ?> · 更新时间 2026-08-19</div>
+            <div class="dl-meta">安装包 · <?php echo $sizeTxt; ?> · 更新时间 2026-08-22 · GitHub Releases</div>
             <p class="dl-desc">完整安装包：包含核心程序、官方主题（Rye 官方主题 / Doc 文档主题）、常用插件（防垃圾评论、导航与友情链接、数据导入、英文站）。上传即可安装。</p>
             <a class="dl-btn" href="<?php echo esc($dlZip); ?>">⬇ 下载安装包（<?php echo $sizeTxt; ?>）</a>
+            <a class="dl-btn gh-btn" href="<?php echo esc($ghRepo); ?>" target="_blank" rel="noopener">★ GitHub 获取源码</a>
         </div>
         <div class="dl-card ghost">
             <div class="dl-type">云安装</div>
@@ -151,7 +155,8 @@ body.theme-rye .dl-updates-more:hover { text-decoration:underline; }
         <a href="<?php echo baseUrl('download/ryeblog-1.3.0.zip'); ?>">v1.3.0</a> ·
         <a href="<?php echo baseUrl('download/ryeblog-1.2.0.zip'); ?>">v1.2.0</a> ·
         <a href="<?php echo baseUrl('download/ryeblog-1.1.0.zip'); ?>">v1.1.0</a> ·
-        <a href="<?php echo baseUrl('download/ryeblog-1.0.0.zip'); ?>">v1.0.0</a>
+        <a href="<?php echo baseUrl('download/ryeblog-1.0.0.zip'); ?>">v1.0.0</a> ·
+        <a href="<?php echo esc($ghRepo); ?>/releases" target="_blank" rel="noopener">GitHub Releases →</a>
     </p>
 
     <?php if (!empty($updList)): ?>

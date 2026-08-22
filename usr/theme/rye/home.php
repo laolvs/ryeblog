@@ -62,6 +62,7 @@ $navPages  = getPages();
         <p class="rye-hero-sub"><?php echo esc(getOption('rye_hero_sub', 'RyeBlog 是一款轻量、安全、可扩展的 PHP 博客系统。原生 PHP 编写、零依赖，插件主题在线安装，博客从此不再复杂。')); ?></p>
         <div class="rye-hero-actions">
             <a class="rye-btn rye-btn-primary" href="<?php echo esc($btnDownloadUrl); ?>">⬇ 立即下载</a>
+            <a class="rye-btn rye-btn-ghost" href="https://github.com/laolvs/ryeblog" target="_blank" rel="noopener">★ GitHub 源码</a>
             <a class="rye-btn rye-btn-ghost" href="<?php echo esc($btnDocUrl); ?>">📖 查看文档</a>
             <a class="rye-btn rye-btn-ghost" href="https://teayear.com/" target="_blank" rel="noopener">🚀 百万级演示站</a>
         </div>
@@ -102,7 +103,7 @@ $navPages  = getPages();
                     <span class="rye-dl-icon">⬇</span>
                     <span class="rye-dl-text">
                         <b>下载 RyeBlog</b>
-                        <small>安装包 · 约 2 MB</small>
+                        <small>安装包 · 约 2.8 MB · GitHub Releases</small>
                     </span>
                 </a>
                 <a class="rye-btn rye-btn-ghost" href="<?php echo esc($btnDocUrl); ?>">📖 安装文档</a>
