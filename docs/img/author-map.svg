@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .boxb{fill:#c8e6c9;stroke:#2e6b35;stroke-width:2;rx:12}
+      .boxt{fill:#173a1d;font-size:15px;font-weight:600;text-anchor:middle}
+      .sub{fill:#2e6b35;font-size:12px;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+      .sel{fill:#fff;stroke:#357a3e;stroke-width:2;rx:8}
+      .note{fill:#6b7d70;font-size:12px;text-anchor:middle}
+    </style>
+  </defs>
+
+  <text x="360" y="30" class="tit">作者映射：源作者 → 本地用户</text>
+
+  <!-- 源作者 -->
+  <rect x="40" y="90" width="200" height="70" class="box"/>
+  <text x="140" y="120" class="boxt">源博客作者</text>
+  <text x="140" y="142" class="sub">如 admin / 原博主</text>
+  <line x1="240" y1="125" x2="320" y2="125" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar2)"/>
+
+  <!-- 下拉框 -->
+  <rect x="320" y="95" width="200" height="60" class="sel"/>
+  <text x="335" y="120" class="boxt" text-anchor="start" font-size="14">作者映射 ▾</text>
+  <text x="335" y="142" class="sub" text-anchor="start">admin（默认当前管理员）</text>
+  <line x1="520" y1="125" x2="600" y2="125" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar2)"/>
+
+  <!-- 本地用户 -->
+  <rect x="600" y="90" width="80" height="70" class="boxb"/>
+  <text x="640" y="120" class="boxt">本地</text>
+  <text x="640" y="142" class="sub">用户</text>
+
+  <!-- 结果说明 -->
+  <rect x="120" y="200" width="480" height="56" class="box"/>
+  <text x="360" y="224" class="boxt">导入后文章作者署名 = 所选本地用户</text>
+  <text x="360" y="244" class="sub">只改 vd_posts.author 字符串 · 不写 vd_users · 不动密码/权限</text>
+</svg>

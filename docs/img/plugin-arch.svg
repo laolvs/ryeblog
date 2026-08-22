@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .boxb{fill:#c8e6c9;stroke:#2e6b35;stroke-width:2;rx:12}
+      .boxt{fill:#173a1d;font-size:14px;font-weight:600;text-anchor:middle}
+      .sub{fill:#2e6b35;font-size:12px;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+      .code{fill:#0f2417;font-size:12.5px;text-anchor:middle;font-family:Consolas,Menlo,monospace}
+      .note{fill:#6b7d70;font-size:12px;text-anchor:middle}
+    </style>
+  </defs>
+
+  <text x="380" y="28" class="tit">插件架构</text>
+
+  <!-- 插件类 -->
+  <rect x="40" y="60" width="300" height="150" class="boxb"/>
+  <text x="190" y="86" class="boxt">class Plugin_&lt;目录名&gt;</text>
+  <text x="190" y="116" class="code">config()      配置页</text>
+  <text x="190" y="140" class="code">saveConfig()  保存/处理</text>
+  <text x="190" y="164" class="code">contentMenu() 内容入口</text>
+  <text x="190" y="188" class="code">hooks         挂载点</text>
+
+  <!-- 后台路由 -->
+  <rect x="420" y="60" width="300" height="70" class="box"/>
+  <text x="570" y="86" class="boxt">plugin-config.php</text>
+  <text x="570" y="108" class="sub">渲染 config() / 调 saveConfig()</text>
+
+  <rect x="420" y="150" width="300" height="70" class="box"/>
+  <text x="570" y="176" class="boxt">plugin-content.php</text>
+  <text x="570" y="198" class="sub">汇总各插件 contentMenu()</text>
+
+  <!-- 连接 -->
+  <line x1="340" y1="95" x2="420" y2="95" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="340" y1="178" x2="420" y2="185" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar3)"/>
+
+  <!-- 插件注册表 -->
+  <rect x="40" y="250" width="680" height="60" class="box"/>
+  <text x="380" y="276" class="boxt">启用插件表（vd_options / 插件目录扫描）</text>
+  <text x="380" y="298" class="sub">scanPlugins() 读取 @Title @Desc @Doc 等标签，自动发现 docs/plugins/&lt;名&gt;.md</text>
+</svg>

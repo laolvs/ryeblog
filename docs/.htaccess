@@ -1,0 +1,6 @@
+# docs 目录下的 Markdown 文件强制以 UTF-8 编码输出，避免中文乱码
+# 说明：XAMPP 默认未给 .md 映射 MIME 类型，Apache 会不加 Content-Type 直接发送字节，
+# 浏览器便按错误编码（如 GBK）解析产生乱码。用 ForceType 显式指定类型与字符集。
+<FilesMatch "\.(md|markdown)$">
+    ForceType "text/plain; charset=UTF-8"
+</FilesMatch>

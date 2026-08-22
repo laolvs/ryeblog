@@ -1,0 +1,166 @@
+/*
+@Version 1.0.1
+@Title 企业站 · 文旅酒店 Travel
+@Desc 清新蓝绿 + 暖金、度假氛围。适用：景区 / 旅行社 / 酒店 / 民宿。首页 Banner + 热门目的地 + 精选线路 + 酒店住宿 + 攻略 + 咨询。
+*/
+/* 文旅酒店：清新蓝绿 + 暖金，度假氛围 */
+:root{
+  --biz-primary:#0e8f8a;        /* 湖水青主色 */
+  --biz-primary-dark:#0a6f6b;
+  --biz-accent:#f2a94e;         /* 暖金（转化按钮） */
+  --biz-bg:#f5faf9;             /* 浅青背景 */
+  --biz-ink:#24403e;
+  --biz-muted:#7d9996;
+  --biz-line:#e0ecea;
+  --biz-radius:10px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--biz-ink);background:#fff;line-height:1.6}
+a{color:var(--biz-primary);text-decoration:none}
+img{max-width:100%}
+.biz-container{max-width:1180px;margin:0 auto;padding:0 20px}
+.muted{color:var(--biz-muted)}
+
+/* ===== 顶栏 ===== */
+.biz-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--biz-line);box-shadow:0 1px 8px rgba(27,75,143,.05)}
+.biz-header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.biz-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--biz-primary-dark)}
+.biz-logo img{width:34px;height:34px;border-radius:8px}
+.biz-nav{display:flex;align-items:center;gap:26px;font-size:15px}
+.biz-nav a{color:var(--biz-ink);padding:6px 2px;border-bottom:2px solid transparent}
+.biz-nav a:hover,.biz-nav a.on{color:var(--biz-primary);border-color:var(--biz-primary)}
+.biz-nav-phone{color:var(--biz-primary)!important;font-weight:700;border-bottom:none!important}
+.biz-burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.biz-burger span{display:block;width:22px;height:2px;background:var(--biz-primary-dark);margin:4px 0}
+
+/* ===== 首屏 Banner ===== */
+.biz-hero{background:linear-gradient(135deg,#123a6e 0%,#1b4b8f 55%,#2a6bc4 100%);color:#fff;padding:90px 0}
+.biz-hero-inner{display:flex;gap:50px;align-items:center;flex-wrap:wrap}
+.biz-hero-text{flex:1.2;min-width:300px}
+.biz-hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:13px;margin-bottom:18px}
+.biz-hero h1{font-size:42px;line-height:1.25;margin:0 0 16px;font-weight:800}
+.biz-hero p{font-size:17px;opacity:.92;max-width:640px;margin:0 0 26px}
+.biz-hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.biz-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--biz-radius);font-size:15px;font-weight:700;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.biz-btn:hover{transform:translateY(-2px)}
+.biz-btn-primary{background:var(--biz-accent);color:#fff}
+.biz-btn-primary:hover{box-shadow:0 8px 22px rgba(232,163,61,.4)}
+.biz-btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.biz-btn-ghost:hover{background:rgba(255,255,255,.1)}
+.biz-hero-stats{flex:1;min-width:280px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.biz-stat-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--biz-radius);padding:20px;text-align:center;backdrop-filter:blur(4px)}
+.biz-stat-card b{display:block;font-size:32px;font-weight:800}
+.biz-stat-card span{font-size:13px;opacity:.85}
+
+/* ===== 通用区块 ===== */
+.biz-section{padding:66px 0}
+.biz-section-alt{background:var(--biz-bg)}
+.biz-section-head{text-align:center;margin-bottom:40px}
+.biz-eyebrow{color:var(--biz-primary);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+.biz-section-head h2{font-size:30px;margin:0 0 10px;color:var(--biz-ink)}
+.biz-section-head p{color:var(--biz-muted);margin:0;font-size:15px}
+
+/* 优势矩阵 */
+.biz-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.biz-feature{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);padding:26px;transition:box-shadow .2s}
+.biz-feature:hover{box-shadow:0 10px 26px rgba(27,75,143,.08)}
+.biz-feature-icon{font-size:30px;margin-bottom:12px}
+.biz-feature h3{font-size:17px;margin:0 0 8px}
+.biz-feature p{color:var(--biz-muted);font-size:13.5px;margin:0}
+
+/* 产品服务卡片 */
+.biz-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.biz-product{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);overflow:hidden;transition:box-shadow .2s,transform .2s;display:block;color:inherit}
+.biz-product:hover{box-shadow:0 10px 26px rgba(27,75,143,.1);transform:translateY(-3px)}
+.biz-product-img{width:100%;height:160px;object-fit:cover;background:var(--biz-bg)}
+.biz-product-body{padding:16px 18px}
+.biz-product-body h3{font-size:16px;margin:0 0 6px}
+.biz-product-body p{color:var(--biz-muted);font-size:13px;margin:0}
+.biz-product-more{display:inline-block;margin-top:10px;font-size:13px;color:var(--biz-primary);font-weight:600}
+
+/* 资质 */
+.biz-certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.biz-cert{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);padding:18px;text-align:center;font-size:14px;color:var(--biz-ink)}
+.biz-cert b{display:block;font-size:24px;margin-bottom:6px}
+
+/* 动态列表 */
+.biz-news{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.biz-news-item{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);padding:20px;display:block;color:inherit;transition:box-shadow .2s}
+.biz-news-item:hover{box-shadow:0 10px 26px rgba(27,75,143,.08)}
+.biz-news-date{font-size:12.5px;color:var(--biz-muted)}
+.biz-news-item h3{font-size:16px;margin:8px 0 6px;color:var(--biz-ink)}
+.biz-news-item p{color:var(--biz-muted);font-size:13.5px;margin:0}
+
+/* CTA 转化条 */
+.biz-cta{background:linear-gradient(135deg,#1b4b8f,#2a6bc4);color:#fff;border-radius:var(--biz-radius);padding:40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.biz-cta h2{margin:0 0 6px;font-size:24px}
+.biz-cta p{margin:0;opacity:.9;font-size:15px}
+
+/* ===== 列表页 ===== */
+.biz-main{padding:46px 0 66px;background:#fff}
+.biz-page-head{border-bottom:2px solid var(--biz-primary);padding-bottom:14px;margin-bottom:28px}
+.biz-page-head h1{font-size:28px;margin:0 0 4px}
+.biz-page-head p{margin:0;font-size:14px;color:var(--biz-muted)}
+.biz-post-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.biz-post-item{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);overflow:hidden;display:block;color:inherit;transition:box-shadow .2s}
+.biz-post-item:hover{box-shadow:0 10px 26px rgba(27,75,143,.1)}
+.biz-post-cover{width:100%;height:170px;object-fit:cover;background:var(--biz-bg)}
+.biz-post-info{padding:16px 18px}
+.biz-post-info h3{font-size:16px;margin:0 0 6px;color:var(--biz-ink)}
+.biz-post-info p{color:var(--biz-muted);font-size:13px;margin:0 0 8px}
+.biz-post-date{font-size:12px;color:var(--biz-muted)}
+.biz-empty{padding:60px 0;text-align:center;color:var(--biz-muted)}
+.biz-list{display:flex;flex-direction:column;gap:0}
+.biz-list-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 4px;border-bottom:1px solid var(--biz-line);color:inherit;transition:background .15s}
+.biz-list-row:hover{background:var(--biz-bg)}
+.biz-list-main{display:flex;flex-direction:column;gap:5px;min-width:0}
+.biz-list-title{font-size:16px;font-weight:600;color:var(--biz-ink)}
+.biz-list-row:hover .biz-list-title{color:var(--biz-primary)}
+.biz-list-desc{font-size:13px;color:var(--biz-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:640px}
+.biz-list-date{font-size:12.5px;color:var(--biz-muted);white-space:nowrap;flex:none}
+
+.biz-pagination{display:flex;gap:8px;justify-content:center;margin-top:34px}
+.biz-pagination a,.biz-pagination span{display:inline-flex;min-width:36px;height:36px;align-items:center;justify-content:center;border:1px solid var(--biz-line);border-radius:8px;background:#fff;color:var(--biz-ink);font-size:14px}
+.biz-pagination .on{background:var(--biz-primary);color:#fff;border-color:var(--biz-primary)}
+.biz-pagination a:hover{background:var(--biz-bg)}
+
+/* ===== 文章页 ===== */
+.biz-article{max-width:860px}
+.biz-article-title{font-size:30px;margin:0 0 12px;line-height:1.35}
+.biz-article-meta{color:var(--biz-muted);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--biz-line);padding-bottom:16px;margin-bottom:24px}
+.biz-article-cat{color:var(--biz-primary)}
+.biz-article-content{font-size:16px;line-height:1.9}
+.biz-article-content h2,.biz-article-content h3{border-left:4px solid var(--biz-primary);padding-left:12px}
+.biz-article-content img{border-radius:8px}
+.biz-article-content pre{background:#f4f6f9;border-radius:8px;padding:14px;overflow-x:auto}
+.biz-article-content blockquote{border-left:4px solid var(--biz-primary);margin:16px 0;padding:8px 16px;background:var(--biz-bg);color:var(--biz-muted)}
+.biz-article-pager{display:flex;justify-content:space-between;gap:16px;margin-top:40px;border-top:1px solid var(--biz-line);padding-top:20px;font-size:14px}
+
+/* ===== 页脚 ===== */
+.biz-footer{background:#16202b;color:#c6cfd9;margin-top:0;padding:52px 0 0}
+.biz-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:30px;padding-bottom:36px}
+.biz-footer-col h4{color:#fff;font-size:15px;margin:0 0 14px}
+.biz-footer-col p{font-size:13.5px;margin:0 0 8px;color:#aab6c2}
+.biz-footer-col ul{list-style:none;margin:0;padding:0}
+.biz-footer-col li{margin-bottom:9px;font-size:13.5px}
+.biz-footer-col a{color:#c6cfd9}
+.biz-footer-col a:hover{color:#fff}
+.biz-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#93a1ae}
+
+/* ===== 响应式 ===== */
+@media (max-width:900px){
+  .biz-nav{position:fixed;inset:66px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:10px 20px 18px;border-bottom:1px solid var(--biz-line);display:none;box-shadow:0 12px 26px rgba(0,0,0,.08)}
+  .biz-nav.open{display:flex}
+  .biz-nav a{padding:12px 0;width:100%;border-bottom:1px solid var(--biz-line)}
+  .biz-burger{display:block}
+  .biz-hero{padding:56px 0}
+  .biz-hero h1{font-size:30px}
+  .biz-footer-grid{grid-template-columns:1fr 1fr}
+  .biz-cta{padding:28px}
+}
+@media (max-width:560px){
+  .biz-footer-grid{grid-template-columns:1fr}
+  .biz-hero-stats{grid-template-columns:1fr}
+}
+/* 目的地 */
+.biz-dest-tag{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.5);color:#fff;font-size:12px;padding:3px 10px;border-radius:12px}

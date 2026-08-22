@@ -1,0 +1,38 @@
+/* ===========================================================
+   RyeBlog 主题变量
+   三套绿色风格：fresh 清新绿 / forest 深林绿 / mint 薄荷绿
+   组件样式（style.css / admin.css）只引用这些变量。
+   =========================================================== */
+
+:root,
+body.theme-fresh {
+    /* 前台变量 */
+    --green-900:#1b3a1f; --green-700:#2e6b35; --green-600:#357a3e;
+    --green-500:#43a047; --green-400:#66bb6a; --green-200:#a5d6a7;
+    --green-100:#c8e6c9; --green-050:#e8f5e9; --green-025:#f1f8f2;
+    --ink:#1f2a22; --muted:#6b7d70; --line:#d7e7d9; --white:#ffffff;
+    --shadow:0 6px 22px rgba(46,107,53,.10); --radius:14px;
+    /* 后台变量 */
+    --g-900:#173a1d; --g-700:#2e6b35; --g-600:#357a3e; --g-500:#43a047;
+    --g-200:#a5d6a7; --g-100:#c8e6c9; --g-050:#e8f5e9; --g-025:#f3f9f3;
+}
+
+body.theme-forest {
+    --green-900:#14361c; --green-700:#1f6b2e; --green-600:#267a36;
+    --green-500:#2f9e44; --green-400:#46b35c; --green-200:#8fd49c;
+    --green-100:#bfe6c6; --green-050:#d8ecd9; --green-025:#eaf3ea;
+    --ink:#16241a; --muted:#5c7060; --line:#bcd6bf; --white:#ffffff;
+    --shadow:0 6px 22px rgba(20,54,28,.12);
+    --g-900:#102e16; --g-700:#1f6b2e; --g-600:#267a36; --g-500:#2f9e44;
+    --g-200:#8fd49c; --g-100:#bfe6c6; --g-050:#e7f4e9; --g-025:#eef6ef;
+}
+
+body.theme-mint {
+    --green-900:#1f5f54; --green-700:#2a8f7f; --green-600:#34a48f;
+    --green-500:#46c2a6; --green-400:#6fd6bf; --green-200:#a7e8d8;
+    --green-100:#cdf3ea; --green-050:#e3f7f1; --green-025:#f2fbf8;
+    --ink:#234039; --muted:#6a8a80; --line:#c7ebe1; --white:#ffffff;
+    --shadow:0 6px 22px rgba(52,164,143,.12);
+    --g-900:#1f5f54; --g-700:#2a8f7f; --g-600:#34a48f; --g-500:#46c2a6;
+    --g-200:#a7e8d8; --g-100:#cdf3ea; --g-050:#e6f8f3; --g-025:#f2fbf9;
+}

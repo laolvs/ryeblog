@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .boxb{fill:#c8e6c9;stroke:#2e6b35;stroke-width:2;rx:12}
+      .boxt{fill:#173a1d;font-size:14px;font-weight:600;text-anchor:middle}
+      .sub{fill:#2e6b35;font-size:12px;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+    </style>
+  </defs>
+
+  <text x="370" y="28" class="tit">导航与友情链接 · 模式</text>
+
+  <!-- 三种开关 -->
+  <rect x="40"  y="60" width="200" height="60" class="box"/>
+  <text x="140" y="88" class="boxt">仅友情链接</text>
+  <text x="140" y="108" class="sub">展示在首页</text>
+
+  <rect x="270" y="60" width="200" height="60" class="box"/>
+  <text x="370" y="88" class="boxt">仅导航</text>
+  <text x="370" y="108" class="sub">独立频道 + 顶部</text>
+
+  <rect x="500" y="60" width="200" height="60" class="box"/>
+  <text x="600" y="88" class="boxt">两者都要</text>
+  <text x="600" y="108" class="sub">首页 + 独立频道</text>
+
+  <line x1="140" y1="120" x2="370" y2="168" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar6)"/>
+  <line x1="370" y1="120" x2="370" y2="168" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar6)"/>
+  <line x1="600" y1="120" x2="370" y2="168" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar6)"/>
+
+  <!-- 数据表 -->
+  <rect x="200" y="170" width="340" height="60" class="boxb"/>
+  <text x="370" y="196" class="boxt">数据表</text>
+  <text x="370" y="218" class="sub">vd_nav_groups（分组） · vd_nav_links（链接）</text>
+
+  <line x1="370" y1="230" x2="370" y2="268" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar6)"/>
+
+  <!-- 展示 -->
+  <rect x="120" y="270" width="220" height="48" class="box"/>
+  <text x="230" y="298" class="boxt">首页 / 侧边栏</text>
+  <rect x="400" y="270" width="220" height="48" class="box"/>
+  <text x="510" y="298" class="boxt">顶部导航 / 独立页</text>
+</svg>

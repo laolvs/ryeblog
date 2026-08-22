@@ -1,0 +1,163 @@
+/*
+@Version 1.0.1
+@Title 企业站 · 餐饮服务 Food
+@Desc 暖色调、亲和力强。适用：餐厅 / 咖啡 / 烘焙 / 美容 / 家政 / 本地生活服务。首页 Hero + 招牌推荐 + 服务项目 + 门店信息 + 顾客评价 + 预约 CTA。
+*/
+:root{
+  --biz-primary:#d64541;        /* 暖红主色（食欲色） */
+  --biz-primary-dark:#b23a37;
+  --biz-accent:#f39c12;         /* 暖橙点缀 */
+  --biz-bg:#fdf6f0;             /* 奶油底 */
+  --biz-ink:#3a2e28;
+  --biz-muted:#8a7a70;
+  --biz-line:#f0e2d8;
+  --biz-radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--biz-ink);background:#fff;line-height:1.65}
+a{color:var(--biz-primary);text-decoration:none}
+img{max-width:100%}
+.biz-container{max-width:1180px;margin:0 auto;padding:0 20px}
+.muted{color:var(--biz-muted)}
+
+/* ===== 顶栏（暖白） ===== */
+.biz-header{position:sticky;top:0;z-index:50;background:rgba(255,253,250,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--biz-line)}
+.biz-header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.biz-logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;color:var(--biz-primary-dark)}
+.biz-logo img{width:34px;height:34px;border-radius:50%}
+.biz-nav{display:flex;align-items:center;gap:24px;font-size:15px}
+.biz-nav a{color:var(--biz-ink);padding:6px 2px;border-bottom:2px solid transparent}
+.biz-nav a:hover,.biz-nav a.on{color:var(--biz-primary);border-color:var(--biz-primary)}
+.biz-nav-phone{color:var(--biz-primary)!important;font-weight:800;border-bottom:none!important}
+.biz-burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.biz-burger span{display:block;width:22px;height:2px;background:var(--biz-primary-dark);margin:4px 0}
+
+/* ===== Hero（暖色渐变） ===== */
+.biz-hero{background:linear-gradient(135deg,#fdf6f0 0%,#fbe8dc 100%);padding:84px 0}
+.biz-hero-inner{display:flex;gap:50px;align-items:center;flex-wrap:wrap}
+.biz-hero-text{flex:1.2;min-width:300px}
+.biz-hero-badge{display:inline-block;background:#fff;border:1px solid #f3d5c4;color:var(--biz-primary);border-radius:20px;padding:5px 14px;font-size:13px;margin-bottom:18px;font-weight:600}
+.biz-hero h1{font-size:44px;line-height:1.2;margin:0 0 16px;font-weight:800;color:var(--biz-primary-dark)}
+.biz-hero p{font-size:17px;color:var(--biz-muted);max-width:560px;margin:0 0 28px}
+.biz-hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.biz-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:999px;font-size:15px;font-weight:700;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.biz-btn:hover{transform:translateY(-2px)}
+.biz-btn-primary{background:linear-gradient(135deg,var(--biz-primary),var(--biz-accent));color:#fff;box-shadow:0 8px 22px rgba(214,69,65,.3)}
+.biz-btn-primary:hover{box-shadow:0 12px 30px rgba(214,69,65,.4)}
+.biz-btn-ghost{background:#fff;color:var(--biz-primary-dark);border:1px solid #f0d3c4}
+.biz-btn-ghost:hover{background:#fff7f2}
+
+/* ===== 通用区块 ===== */
+.biz-section{padding:70px 0}
+.biz-section-alt{background:var(--biz-bg)}
+.biz-section-head{text-align:center;margin-bottom:42px}
+.biz-eyebrow{color:var(--biz-accent);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.biz-section-head h2{font-size:32px;margin:0 0 10px;color:var(--biz-primary-dark)}
+.biz-section-head p{color:var(--biz-muted);margin:0;font-size:15px}
+
+/* 招牌推荐（大卡片） */
+.biz-special{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.biz-special-item{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.biz-special-item:hover{box-shadow:0 14px 34px rgba(214,69,65,.1);transform:translateY(-4px)}
+.biz-special-item img{width:100%;height:200px;object-fit:cover}
+.biz-special-body{padding:20px}
+.biz-special-body h3{font-size:18px;margin:0 0 8px;color:var(--biz-ink)}
+.biz-special-body p{color:var(--biz-muted);font-size:13.5px;margin:0 0 12px}
+.biz-special-price{display:inline-block;color:var(--biz-primary);font-weight:800;font-size:16px}
+
+/* 服务项目 */
+.biz-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.biz-service{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);padding:26px;text-align:center;transition:box-shadow .2s}
+.biz-service:hover{box-shadow:0 12px 30px rgba(214,69,65,.08)}
+.biz-service-icon{font-size:34px;margin-bottom:12px}
+.biz-service h3{font-size:17px;margin:0 0 8px}
+.biz-service p{color:var(--biz-muted);font-size:13px;margin:0}
+
+/* 门店信息 */
+.biz-shop{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);overflow:hidden}
+.biz-shop-map{min-height:260px;background:linear-gradient(135deg,#fbe8dc,#fdf6f0);display:flex;align-items:center;justify-content:center;color:var(--biz-muted)}
+.biz-shop-info{padding:28px}
+.biz-shop-info h3{font-size:20px;margin:0 0 14px;color:var(--biz-primary-dark)}
+.biz-shop-info ul{list-style:none;margin:0;padding:0}
+.biz-shop-info li{margin-bottom:12px;font-size:14.5px;color:var(--biz-ink)}
+.biz-shop-info li b{color:var(--biz-primary-dark)}
+
+/* 顾客评价 */
+.biz-reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.biz-review{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);padding:22px}
+.biz-review-stars{color:var(--biz-accent);font-size:15px;margin-bottom:10px}
+.biz-review p{font-size:14px;color:var(--biz-ink);margin:0 0 12px;line-height:1.7}
+.biz-review-name{font-size:13px;color:var(--biz-muted)}
+
+/* CTA */
+.biz-cta{background:linear-gradient(135deg,var(--biz-primary),var(--biz-accent));color:#fff;border-radius:var(--biz-radius);padding:44px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.biz-cta h2{margin:0 0 6px;font-size:26px}
+.biz-cta p{margin:0;opacity:.95;font-size:15px}
+.biz-cta .biz-btn-primary{background:#fff;color:var(--biz-primary)}
+
+/* ===== 列表页 ===== */
+.biz-main{padding:48px 0 66px;background:#fff}
+.biz-page-head{border-bottom:2px solid var(--biz-primary);padding-bottom:14px;margin-bottom:28px}
+.biz-page-head h1{font-size:28px;margin:0 0 4px}
+.biz-page-head p{margin:0;font-size:14px;color:var(--biz-muted)}
+.biz-post-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.biz-post-item{background:#fff;border:1px solid var(--biz-line);border-radius:var(--biz-radius);overflow:hidden;display:block;color:inherit;transition:box-shadow .2s}
+.biz-post-item:hover{box-shadow:0 12px 30px rgba(214,69,65,.1)}
+.biz-post-cover{width:100%;height:170px;object-fit:cover;background:var(--biz-bg)}
+.biz-post-info{padding:16px 18px}
+.biz-post-info h3{font-size:16px;margin:0 0 6px}
+.biz-post-info p{color:var(--biz-muted);font-size:13px;margin:0 0 8px}
+.biz-post-date{font-size:12px;color:var(--biz-muted)}
+.biz-empty{padding:60px 0;text-align:center;color:var(--biz-muted)}
+.biz-list{display:flex;flex-direction:column;gap:0}
+.biz-list-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 4px;border-bottom:1px solid var(--biz-line);color:inherit;transition:background .15s}
+.biz-list-row:hover{background:var(--biz-bg)}
+.biz-list-main{display:flex;flex-direction:column;gap:5px;min-width:0}
+.biz-list-title{font-size:16px;font-weight:600;color:var(--biz-ink)}
+.biz-list-row:hover .biz-list-title{color:var(--biz-primary)}
+.biz-list-desc{font-size:13px;color:var(--biz-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:640px}
+.biz-list-date{font-size:12.5px;color:var(--biz-muted);white-space:nowrap;flex:none}
+
+.biz-pagination{display:flex;gap:8px;justify-content:center;margin-top:34px}
+.biz-pagination a,.biz-pagination span{display:inline-flex;min-width:36px;height:36px;align-items:center;justify-content:center;border:1px solid var(--biz-line);border-radius:8px;background:#fff;color:var(--biz-ink);font-size:14px}
+.biz-pagination .on{background:var(--biz-primary);color:#fff;border-color:var(--biz-primary)}
+.biz-pagination a:hover{background:var(--biz-bg)}
+
+/* ===== 文章页 ===== */
+.biz-article{max-width:860px}
+.biz-article-title{font-size:30px;margin:0 0 12px;line-height:1.35}
+.biz-article-meta{color:var(--biz-muted);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--biz-line);padding-bottom:16px;margin-bottom:24px}
+.biz-article-cat{color:var(--biz-primary)}
+.biz-article-content{font-size:16px;line-height:1.9}
+.biz-article-content h2,.biz-article-content h3{border-left:4px solid var(--biz-primary);padding-left:12px}
+.biz-article-content img{border-radius:10px}
+.biz-article-content pre{background:#fdf6f0;border-radius:8px;padding:14px;overflow-x:auto}
+.biz-article-content blockquote{border-left:4px solid var(--biz-primary);margin:16px 0;padding:8px 16px;background:var(--biz-bg);color:var(--biz-muted)}
+.biz-article-pager{display:flex;justify-content:space-between;gap:16px;margin-top:40px;border-top:1px solid var(--biz-line);padding-top:20px;font-size:14px}
+
+/* ===== 页脚（暖深） ===== */
+.biz-footer{background:#3a2e28;color:#d8c8be;padding:52px 0 0}
+.biz-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:30px;padding-bottom:36px}
+.biz-footer-col h4{color:#fff;font-size:15px;margin:0 0 14px}
+.biz-footer-col p{font-size:13.5px;margin:0 0 8px;color:#b5a49a}
+.biz-footer-col ul{list-style:none;margin:0;padding:0}
+.biz-footer-col li{margin-bottom:9px;font-size:13.5px}
+.biz-footer-col a{color:#d8c8be}
+.biz-footer-col a:hover{color:#fff}
+.biz-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#a08e83}
+
+/* ===== 响应式 ===== */
+@media (max-width:900px){
+  .biz-nav{position:fixed;inset:66px 0 auto 0;background:#fffdfa;flex-direction:column;gap:0;padding:10px 20px 18px;border-bottom:1px solid var(--biz-line);display:none}
+  .biz-nav.open{display:flex}
+  .biz-nav a{padding:12px 0;width:100%;border-bottom:1px solid var(--biz-line)}
+  .biz-burger{display:block}
+  .biz-hero{padding:56px 0}
+  .biz-hero h1{font-size:32px}
+  .biz-shop{grid-template-columns:1fr}
+  .biz-footer-grid{grid-template-columns:1fr 1fr}
+  .biz-cta{padding:30px}
+}
+@media (max-width:560px){
+  .biz-footer-grid{grid-template-columns:1fr}
+}

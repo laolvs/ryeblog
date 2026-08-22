@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .boxb{fill:#c8e6c9;stroke:#2e6b35;stroke-width:2;rx:12}
+      .boxt{fill:#173a1d;font-size:15px;font-weight:600;text-anchor:middle}
+      .sub{fill:#2e6b35;font-size:12px;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+      .pill{fill:#fff;stroke:#357a3e;stroke-width:1.5;rx:14}
+    </style>
+  </defs>
+
+  <text x="370" y="28" class="tit">插件内容管理 · 汇总页</text>
+
+  <!-- 汇总页 -->
+  <rect x="270" y="50" width="200" height="56" class="boxb"/>
+  <text x="370" y="76" class="boxt">后台「插件内容」</text>
+  <text x="370" y="96" class="sub">聚合所有插件入口</text>
+
+  <!-- 卡片们 -->
+  <rect x="40"  y="160" width="320" height="120" class="box"/>
+  <text x="200" y="188" class="boxt">导航与友情链接</text>
+  <text x="200" y="214" class="pill" style="fill:#173a1d;font-size:13px">链接管理</text>
+  <text x="200" y="244" class="pill" style="fill:#173a1d;font-size:13px">分组管理</text>
+  <text x="200" y="270" class="sub">独立频道 / 首页展示</text>
+
+  <rect x="390" y="160" width="320" height="120" class="box"/>
+  <text x="550" y="188" class="boxt">数据导入 / 导出</text>
+  <text x="550" y="214" class="pill" style="fill:#173a1d;font-size:13px">导入数据</text>
+  <text x="550" y="244" class="pill" style="fill:#173a1d;font-size:13px">导出备份</text>
+  <text x="550" y="270" class="sub">含「修复图片」</text>
+
+  <!-- 连接 -->
+  <line x1="300" y1="106" x2="200" y2="160" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar4)"/>
+  <line x1="440" y1="106" x2="550" y2="160" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar4)"/>
+</svg>

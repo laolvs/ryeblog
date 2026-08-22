@@ -1,0 +1,9 @@
+# RyeBlog 上传目录安全：禁止执行任何脚本
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule \.(php|php3|php4|php5|php7|phtml|pht|phar|pl|py|cgi|sh|asp|aspx|jsp)$ - [F,L]
+</IfModule>
+<FilesMatch "\.(php|php3|php4|php5|php7|phtml|pht|phar|pl|py|cgi|sh|asp|aspx|jsp)$">
+    Require all denied
+</FilesMatch>
+Options -Indexes

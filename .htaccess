@@ -1,0 +1,94 @@
+# 青笺 (Verda) 伪静态规则（Apache）
+# 需要服务器开启 mod_rewrite 且站点目录 AllowOverride All
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 根路径：交由 index.php 动态处理（双语模式 301 → /cn/，纯中文模式直接渲染）
+    RewriteRule ^$ index.php [L,QSA]
+
+    # 插件论坛：/bbs/ 下所有请求交由插件调度器（茗潭社区）
+    # 扩展名无关（/bbs/forum），必须置于通用规则之前；根路径 /bbs/ 直接指向论坛首页
+    RewriteRule ^bbs/?$ plugin.php?__bbs=forum [L,QSA]
+    RewriteRule ^bbs/?(.*)$ plugin.php?__bbs=$1 [L,QSA]
+
+    # 语言前缀 /cn（中文） /en（英文）—— 与无前缀规则结构一致，仅多一层前缀
+    RewriteRule ^(cn|en)/post/([0-9]+)/?$          post.php?p=$2&lang=$1       [L,QSA]
+    RewriteRule ^(cn|en)/post/(.+)/?$              post.php?slug=$2&lang=$1    [L,QSA]
+    RewriteRule ^(cn|en)/category/(.+)/?$          category.php?c=$2&lang=$1   [L,QSA]
+    RewriteRule ^(cn|en)/page/(.+)/?$              page.php?p=$2&lang=$1       [L,QSA]
+    RewriteRule ^(cn|en)/tag/(.+)/?$               tag.php?t=$2&lang=$1        [L,QSA]
+    RewriteRule ^(cn|en)/tags/?$                   tags.php?lang=$1             [L,QSA]
+    RewriteRule ^(cn|en)/archives/([0-9]+)\.html$  post.php?p=$2&lang=$1        [L,QSA]
+    RewriteRule ^(cn|en)/archive/?$                archive.php?lang=$1          [L,QSA]
+    RewriteRule ^(cn|en)/search/?$                 search.php?lang=$1           [L,QSA]
+    RewriteRule ^(cn|en)/sitemap\.xml$             sitemap.php?lang=$1          [L,QSA]
+    RewriteRule ^(cn|en)/feed/?$                   feed.php?lang=$1             [L,QSA]
+    RewriteRule ^(cn|en)/?$                         index.php?lang=$1            [L,QSA]
+    # html 模式：{slug}.html → slug.php 分派器（区分文章/独立页面）
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(cn|en)/([^./]+)\.html$           slug.php?slug=$2&lang=$1    [L,QSA]
+    # 通用回退
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(cn|en)/(.+)/?$                   $2?lang=$1                   [L,QSA]
+
+    # 无前缀（兼容旧链接 / 直链，默认中文）
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^post/([0-9]+)/?$        post.php?p=$1       [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^post/(.+)/?$            post.php?slug=$1    [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^category/(.+)/?$        category.php?c=$1   [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^tag/(.+)/?$             tag.php?t=$1        [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^tags/?$                 tags.php            [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^page/(.+)/?$            page.php?p=$1       [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^archive/?$              archive.php         [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^search/?$               search.php         [L,QSA]
+    RewriteRule ^sitemap\.xml$           sitemap.php         [L,QSA]
+    RewriteRule ^feed/?$                 feed.php             [L,QSA]
+    # html 模式（无前缀）
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^./]+)\.html$         slug.php?slug=$1    [L,QSA]
+</IfModule>
+
+# ---------- 安全 ----------
+# 隐藏 PHP 版本号（若服务器未关闭 expose_php）
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---------- 性能：gzip 压缩 ----------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# ---------- 性能：静态资源缓存 ----------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>

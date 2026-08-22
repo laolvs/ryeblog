@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .hub{fill:#2e6b35;stroke:#173a1d;stroke-width:2;rx:50%}
+      .boxt{fill:#173a1d;font-size:14px;font-weight:600;text-anchor:middle}
+      .sub{fill:#fff;font-size:13px;font-weight:600;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+    </style>
+  </defs>
+
+  <text x="380" y="28" class="tit">帮助文档 · 随处可达</text>
+
+  <circle cx="380" cy="175" r="58" class="hub"/>
+  <text x="380" y="170" class="sub">📘 帮助</text>
+  <text x="380" y="192" class="sub">文档</text>
+
+  <rect x="40"  y="60"  width="190" height="56" class="box"/>
+  <text x="135" y="86" class="boxt">仪表盘横幅</text>
+  <text x="135" y="106" class="sub" style="fill:#2e6b35;font-weight:400;font-size:11px">📖 帮助 · ⚖️ 授权</text>
+
+  <rect x="530" y="60"  width="190" height="56" class="box"/>
+  <text x="625" y="86" class="boxt">后台页脚</text>
+  <text x="625" y="106" class="sub" style="fill:#2e6b35;font-weight:400;font-size:11px">每页底部常驻</text>
+
+  <rect x="40"  y="260" width="190" height="56" class="box"/>
+  <text x="135" y="286" class="boxt">登录页</text>
+  <text x="135" y="306" class="sub" style="fill:#2e6b35;font-weight:400;font-size:11px">入口处链接</text>
+
+  <rect x="530" y="260" width="190" height="56" class="box"/>
+  <text x="625" y="286" class="boxt">插件「说明」</text>
+  <text x="625" y="306" class="sub" style="fill:#2e6b35;font-weight:400;font-size:11px">插件管理列表</text>
+
+  <rect x="300" y="285" width="160" height="48" class="box"/>
+  <text x="380" y="314" class="boxt">开发文档</text>
+
+  <line x1="225" y1="88"  x2="324" y2="150" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar5)"/>
+  <line x1="535" y1="88"  x2="436" y2="150" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar5)"/>
+  <line x1="225" y1="288" x2="324" y2="200" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar5)"/>
+  <line x1="535" y1="288" x2="436" y2="200" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar5)"/>
+  <line x1="380" y1="285" x2="380" y2="233" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar5)"/>
+</svg>

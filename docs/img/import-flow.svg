@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6b7d70"/>
+    </marker>
+    <style>
+      .box{fill:#e8f5e9;stroke:#357a3e;stroke-width:2;rx:12}
+      .boxb{fill:#c8e6c9;stroke:#2e6b35;stroke-width:2;rx:12}
+      .boxt{fill:#173a1d;font-size:15px;font-weight:600;text-anchor:middle}
+      .sub{fill:#2e6b35;font-size:12px;text-anchor:middle}
+      .tit{fill:#173a1d;font-size:18px;font-weight:800;text-anchor:middle}
+      .note{fill:#6b7d70;font-size:12px;text-anchor:middle}
+    </style>
+  </defs>
+
+  <text x="380" y="30" class="tit">数据导入流程</text>
+
+  <!-- 数据源 -->
+  <rect x="40"  y="55" width="200" height="60" class="box"/>
+  <text x="140" y="82" class="boxt">WordPress XML</text>
+  <text x="140" y="102" class="sub">WXR 标准导出</text>
+
+  <rect x="280" y="55" width="200" height="60" class="box"/>
+  <text x="380" y="82" class="boxt">Typecho XML</text>
+  <text x="380" y="102" class="sub">Typecho 导出</text>
+
+  <rect x="520" y="55" width="200" height="60" class="box"/>
+  <text x="620" y="82" class="boxt">SQL 文件</text>
+  <text x="620" y="102" class="sub">整库 / 表导出</text>
+
+  <!-- 箭头到解析器 -->
+  <line x1="140" y1="115" x2="330" y2="158" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="380" y1="115" x2="380" y2="158" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="620" y1="115" x2="430" y2="158" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 解析器 -->
+  <rect x="270" y="160" width="220" height="62" class="boxb"/>
+  <text x="380" y="188" class="boxt">解析 + 字段映射</text>
+  <text x="380" y="208" class="sub">分类 / 标签 / 文章 / 评论</text>
+
+  <!-- 解析器 -> 两个处理框 -->
+  <line x1="320" y1="222" x2="200" y2="270" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="440" y1="222" x2="560" y2="270" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 处理框 -->
+  <rect x="40"  y="272" width="320" height="70" class="box"/>
+  <text x="200" y="300" class="boxt">① 下载远程图片到本地</text>
+  <text x="200" y="322" class="sub">usr/uploads/import/ 并替换链接</text>
+
+  <rect x="400" y="272" width="320" height="70" class="box"/>
+  <text x="560" y="300" class="boxt">② 作者映射</text>
+  <text x="560" y="322" class="sub">统一归属到所选本地用户</text>
+
+  <!-- 两个处理框 -> 数据库 -->
+  <line x1="200" y1="342" x2="330" y2="392" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="560" y1="342" x2="430" y2="392" stroke="#6b7d70" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 数据库 -->
+  <rect x="270" y="394" width="220" height="60" class="boxb"/>
+  <text x="380" y="420" class="boxt">✅ 写入数据库</text>
+  <text x="380" y="440" class="sub">vd_posts 等 · 不碰 vd_users</text>
+</svg>

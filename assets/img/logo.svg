@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#2e6b35"/>
+  <g stroke="#c8e6c9" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M32 52 V24"/>
+    <path d="M32 26 C26 24 23 19 23 13 C29 14 32 19 32 26Z" fill="#a5d6a7" stroke="none"/>
+    <path d="M32 26 C38 24 41 19 41 13 C35 14 32 19 32 26Z" fill="#a5d6a7" stroke="none"/>
+    <path d="M32 34 C27 32 24 28 24 23 C29 24 32 28 32 34Z" fill="#c8e6c9" stroke="none"/>
+    <path d="M32 34 C37 32 40 28 40 23 C35 24 32 28 32 34Z" fill="#c8e6c9" stroke="none"/>
+  </g>
+  <text x="32" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#e8f5e9" font-weight="bold">Rye</text>
+</svg>

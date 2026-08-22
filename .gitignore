@@ -1,0 +1,53 @@
+# ===== 环境与配置（含数据库凭据，切勿提交） =====
+/config.php
+
+# ===== 运行时 / 缓存 / 临时 =====
+/tmp/
+/cache/
+*.log
+
+# ===== 用户上传（保留 .htaccess 安全防护，忽略所有运行时数据） =====
+/usr/uploads/*
+!/usr/uploads/.htaccess
+
+# ===== 云端市场构建产物（由 tools/cli_pack.php 生成，保留 repo.json 作格式示例） =====
+/cloud-release/**/*.zip
+
+# ===== 编辑器 / IDE =====
+.idea/
+.vscode/
+*.swp
+
+# ===== 系统 / OS =====
+.DS_Store
+Thumbs.db
+
+# ===== 依赖（本项目零依赖，保留以防误装） =====
+/vendor/
+/node_modules/
+
+# ===== 开发残留 / 不应发布的文件（与 tools/build-release.php skip 列表对齐） =====
+config.php.bak
+verda.sql
+zip-probe.php
+_out.txt
+*.bak
+gpl3.txt
+
+# ===== 本地构建产物 =====
+/download/
+
+# ===== 部署凭据与临时运维脚本（含服务器密码，切勿提交） =====
+/tools/_secret.py
+/tools/_*.py
+/tools/cli_import_fast.php
+/tools/convert_*.py
+/tools/__pycache__/
+/usr/plugins/data-import/cli_import_linuxcn.php
+
+# ===== 本地部署工具（含本机路径/凭据引用，不进公开仓库） =====
+/tools/release.py
+/tools/deploy_screens.py
+
+# ===== 事故备份（filter-branch 后历史对象丢失，reflog 清单存档） =====
+/.git-backup-20260822/
