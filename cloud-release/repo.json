@@ -1,175 +1,186 @@
 {
- "repo": "ryeblog-official",
- "homepage": "https://ryeblog.com/",
- "updated": "2026-08-20T22:42:12+02:00",
- "plugins": [
-  {
-   "name": "data-import",
-   "title": "数据导入导出",
-   "version": "2.0.0",
-   "desc": "导入：WordPress/Typecho XML + SQL，自动下载远程图片；导出：RyeBlog XML/SQL，可恢复网站",
-   "download": "https://ryeblog.com/cloud/plugins/data-import-2.0.0.zip",
-   "sha256": "f48693f6f30a85114f592706206d64ed714eb2a0110423f302c652c43fc3aa72",
-   "min_core": "1.0.0",
-   "changelog": "",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "english-admin",
-   "title": "英文站（English Site）",
-   "version": "2.0.0",
-   "desc": "开启=安装英文库并启用 /en 双语站；关闭=备份并清理英文数据，不影响中文站",
-   "download": "https://ryeblog.com/cloud/plugins/english-admin-2.0.0.zip",
-   "sha256": "edaf96e76c4ab3201c4bb510e26d72e051e42de2b35522e2321bb011e65d8594",
-   "min_core": "1.0.0",
-   "changelog": "",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "example",
-   "title": "文末版权",
-   "version": "1.2.0",
-   "desc": "在每篇文章末尾自动添加版权声明和转载提示，支持后台可视化编辑",
-   "download": "https://ryeblog.com/cloud/plugins/example-1.2.0.zip",
-   "sha256": "e83ef1abb851efbe4e6ccdc5639a7e42500550d98a56dab6e0b98abecdf17237",
-   "min_core": "1.0.0",
-   "changelog": "v1.2.0 测试更新",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "nav-links",
-   "title": "导航与友情链接",
-   "version": "1.0.0",
-   "desc": "独立的导航目录与友情链接插件，两个开关可分别或同时启用；导航布局参考 DesNav：侧栏 + 卡片网格 + 全部/国内/国外 子 Tab + 搜索；主题随博客主题切换。",
-   "download": "https://ryeblog.com/cloud/plugins/nav-links-1.0.0.zip",
-   "sha256": "e24d1f9f982f4955febfa9817b8abf78be22a465c0192b4f662ee338f8ce20b5",
-   "min_core": "1.0.0",
-   "changelog": "v1.0.0 首发",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "post-copyright",
-   "title": "文末版权",
-   "version": "1.1.0",
-   "desc": "在每篇文章末尾自动添加版权声明和转载提示，支持后台可视化编辑",
-   "download": "https://ryeblog.com/cloud/plugins/post-copyright-1.1.0.zip",
-   "sha256": "686d4ee467a3b477c03ae285a83bdf722cc7301cfff6f8d941d17ce70d17fa63",
-   "min_core": "1.0.0",
-   "changelog": "",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "spam-guard",
-   "title": "防垃圾评论",
-   "version": "1.0.0",
-   "desc": "多层无感防垃圾评论：蜜罐、时间陷阱、链接数限制、频率限制、关键词黑名单、全英文检测，后台可配置并查看拦截日志。",
-   "download": "https://ryeblog.com/cloud/plugins/spam-guard-1.0.0.zip",
-   "sha256": "b8948910677c862907d1f59b136ebadf25f43cbfe177effcca4755aa1f286ee5",
-   "min_core": "1.0.0",
-   "changelog": "",
-   "updated": "2026-08-21"
-  }
- ],
- "themes": [
-  {
-   "name": "corp",
-   "title": "企业站 · 综合制造 Corp",
-   "version": "1.0.1",
-   "desc": "蓝灰冷色、简洁大气。适用：制造 / 贸易 / 咨询 / 工程 / 科技综合企业。首页 Banner + 企业优势 + 产品与服务 + 荣誉资质 + 最新动态 + 联系。",
-   "download": "https://ryeblog.com/cloud/themes/corp-1.0.1.zip",
-   "sha256": "7909459fa06b998705b570a7e4cf3b68860cbd6b582799013664eb8bcb9e9729",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "edu",
-   "title": "企业站 · 教育培训 Edu",
-   "version": "1.0.1",
-   "desc": "专业+活力（蓝 + 暖黄）。适用：培训机构 / 职业培训 / 在线教育 / 学校。首页 Hero + 课程体系 + 师资团队 + 学员成果 + 学习优势 + 试听 CTA。",
-   "download": "https://ryeblog.com/cloud/themes/edu-1.0.1.zip",
-   "sha256": "c9ed68c681144e6113e1e13df8c818be3897cf7fa4a1e72fad5b011c305ae055",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "estate",
-   "title": "企业站 · 建筑地产 Estate",
-   "version": "1.0.1",
-   "desc": "深灰蓝 + 金色、沉稳大气。适用：房产 / 建筑 / 装修 / 地产开发。首页 Banner + 核心业务 + 精选项目 + 服务流程 + 最新动态 + 预约。",
-   "download": "https://ryeblog.com/cloud/themes/estate-1.0.1.zip",
-   "sha256": "58d4e69f6c619beb663f0421bdf0721d8340604e4f7c317910fd5992847883c6",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "example",
-   "title": "暖橙主题",
-   "version": "1.0.0",
-   "desc": "温暖的橙色调主题，适合个人博客",
-   "download": "https://ryeblog.com/cloud/themes/example-1.0.0.zip",
-   "sha256": "201d29fca8021abc60aa8c20d8cbc2bcd6feef7cfebad7340fbdcbc8c31ef5fd",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "food",
-   "title": "企业站 · 餐饮服务 Food",
-   "version": "1.0.1",
-   "desc": "暖色调、亲和力强。适用：餐厅 / 咖啡 / 烘焙 / 美容 / 家政 / 本地生活服务。首页 Hero + 招牌推荐 + 服务项目 + 门店信息 + 顾客评价 + 预约 CTA。",
-   "download": "https://ryeblog.com/cloud/themes/food-1.0.1.zip",
-   "sha256": "d18caad8b6a3ba9cf16fdf1719743bf52bf96deb25f0aea80df95c283afa77da",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "law",
-   "title": "企业站 · 法律咨询 Law",
-   "version": "1.0.1",
-   "desc": "深蓝 + 金、专业信任。适用：律所 / 法律咨询 / 企业法务。首页 Banner + 服务领域 + 律师团队 + 经典案例 + 法律常识 + 免费咨询。",
-   "download": "https://ryeblog.com/cloud/themes/law-1.0.1.zip",
-   "sha256": "a7c7a7b20a3fdc3c642fad06bb7649b5813358b0ec6abb117e609f11ef6ff942",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "med",
-   "title": "企业站 · 医疗健康 Med",
-   "version": "1.0.1",
-   "desc": "浅蓝 + 浅绿、专业安心。适用：医院 / 诊所 / 体检 / 医美。首页 Banner + 重点科室 + 专家团队 + 特色服务 + 健康科普 + 预约。",
-   "download": "https://ryeblog.com/cloud/themes/med-1.0.1.zip",
-   "sha256": "9775208677cf62c15631913fc577c0884fc0f297442f509295eaf693b4dc4d1f",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "tech",
-   "title": "企业站 · 科技 SaaS Tech",
-   "version": "1.0.1",
-   "desc": "深色科技蓝渐变、产品功能+解决方案。适用：软件 / SaaS / AI / 硬件 / 互联网公司。首页 Hero + 产品功能 + 解决方案 + 数据指标 + 案例 + 价格/联系。",
-   "download": "https://ryeblog.com/cloud/themes/tech-1.0.1.zip",
-   "sha256": "1ed5b9260a55bd07bb9ab9a8a3a414203857b18dab7b9525d98b057b0807f240",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "travel",
-   "title": "企业站 · 文旅酒店 Travel",
-   "version": "1.0.1",
-   "desc": "清新蓝绿 + 暖金、度假氛围。适用：景区 / 旅行社 / 酒店 / 民宿。首页 Banner + 热门目的地 + 精选线路 + 酒店住宿 + 攻略 + 咨询。",
-   "download": "https://ryeblog.com/cloud/themes/travel-1.0.1.zip",
-   "sha256": "dc50be57c37cf875cf03d795e98cd244205b5a4868f7194e938bc541e02e8777",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  },
-  {
-   "name": "vuecho",
-   "title": "Doc 文档主题",
-   "version": "2.0.2",
-   "desc": "三栏文档主题：左侧文档目录树 + 正文 + 右侧页内目录；首页文档封面；移动端抽屉目录。设计参考 Typecho 主题 Vuecho（MIT）",
-   "download": "https://ryeblog.com/cloud/themes/vuecho-2.0.2.zip",
-   "sha256": "c6126016b3d3f165ef0cde90d21a71662bfeb8ccfc152b39a3ca665a70b1bb3f",
-   "min_core": "1.0.0",
-   "updated": "2026-08-21"
-  }
- ]
+    "repo": "ryeblog-official",
+    "homepage": "https://ryeblog.com/",
+    "updated": "2026-08-22T16:48:02+02:00",
+    "plugins": [
+        {
+            "name": "data-import",
+            "title": "数据导入导出",
+            "version": "2.0.0",
+            "desc": "导入：WordPress/Typecho XML + SQL，自动下载远程图片；导出：RyeBlog XML/SQL，可恢复网站",
+            "download": "https://ryeblog.com/cloud/plugins/data-import-2.0.0.zip",
+            "sha256": "f48693f6f30a85114f592706206d64ed714eb2a0110423f302c652c43fc3aa72",
+            "min_core": "1.0.0",
+            "changelog": "",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "english-admin",
+            "title": "英文站（English Site）",
+            "version": "2.0.0",
+            "desc": "开启=安装英文库并启用 /en 双语站；关闭=备份并清理英文数据，不影响中文站",
+            "download": "https://ryeblog.com/cloud/plugins/english-admin-2.0.0.zip",
+            "sha256": "edaf96e76c4ab3201c4bb510e26d72e051e42de2b35522e2321bb011e65d8594",
+            "min_core": "1.0.0",
+            "changelog": "",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "example",
+            "title": "文末版权",
+            "version": "1.2.0",
+            "desc": "在每篇文章末尾自动添加版权声明和转载提示，支持后台可视化编辑",
+            "download": "https://ryeblog.com/cloud/plugins/example-1.2.0.zip",
+            "sha256": "e83ef1abb851efbe4e6ccdc5639a7e42500550d98a56dab6e0b98abecdf17237",
+            "min_core": "1.0.0",
+            "changelog": "v1.2.0 测试更新",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "nav-links",
+            "title": "导航与友情链接",
+            "version": "1.0.0",
+            "desc": "独立的导航目录与友情链接插件，两个开关可分别或同时启用；导航布局参考 DesNav：侧栏 + 卡片网格 + 全部/国内/国外 子 Tab + 搜索；主题随博客主题切换。",
+            "download": "https://ryeblog.com/cloud/plugins/nav-links-1.0.0.zip",
+            "sha256": "e24d1f9f982f4955febfa9817b8abf78be22a465c0192b4f662ee338f8ce20b5",
+            "min_core": "1.0.0",
+            "changelog": "v1.0.0 首发",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "post-copyright",
+            "title": "文末版权",
+            "version": "1.1.0",
+            "desc": "在每篇文章末尾自动添加版权声明和转载提示，支持后台可视化编辑",
+            "download": "https://ryeblog.com/cloud/plugins/post-copyright-1.1.0.zip",
+            "sha256": "686d4ee467a3b477c03ae285a83bdf722cc7301cfff6f8d941d17ce70d17fa63",
+            "min_core": "1.0.0",
+            "changelog": "",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "rye",
+            "title": "RYE社区（论坛）",
+            "version": "1.0.0",
+            "desc": "",
+            "download": "https://ryeblog.com/cloud/plugins/rye-1.0.0.zip",
+            "sha256": "a2e93e82737d928f2cc416e371c82df7f80aada1991cc7e23bf3ebdcac075e28",
+            "min_core": "1.0.0",
+            "changelog": "首个正式版：完整社区论坛（版块/主题/回复/Markdown 编辑器/私信/通知/收藏/草稿/排行榜/勋章/积分签到/敏感词/IP 封禁/邀请码/举报/广告位），复用博客账号体系，后台「内容」组注入管理入口",
+            "updated": "2026-08-22"
+        },
+        {
+            "name": "spam-guard",
+            "title": "防垃圾评论",
+            "version": "1.0.0",
+            "desc": "多层无感防垃圾评论：蜜罐、时间陷阱、链接数限制、频率限制、关键词黑名单、全英文检测，后台可配置并查看拦截日志。",
+            "download": "https://ryeblog.com/cloud/plugins/spam-guard-1.0.0.zip",
+            "sha256": "b8948910677c862907d1f59b136ebadf25f43cbfe177effcca4755aa1f286ee5",
+            "min_core": "1.0.0",
+            "changelog": "",
+            "updated": "2026-08-21"
+        }
+    ],
+    "themes": [
+        {
+            "name": "corp",
+            "title": "企业站 · 综合制造 Corp",
+            "version": "1.0.1",
+            "desc": "蓝灰冷色、简洁大气。适用：制造 / 贸易 / 咨询 / 工程 / 科技综合企业。首页 Banner + 企业优势 + 产品与服务 + 荣誉资质 + 最新动态 + 联系。",
+            "download": "https://ryeblog.com/cloud/themes/corp-1.0.1.zip",
+            "sha256": "7909459fa06b998705b570a7e4cf3b68860cbd6b582799013664eb8bcb9e9729",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "edu",
+            "title": "企业站 · 教育培训 Edu",
+            "version": "1.0.1",
+            "desc": "专业+活力（蓝 + 暖黄）。适用：培训机构 / 职业培训 / 在线教育 / 学校。首页 Hero + 课程体系 + 师资团队 + 学员成果 + 学习优势 + 试听 CTA。",
+            "download": "https://ryeblog.com/cloud/themes/edu-1.0.1.zip",
+            "sha256": "c9ed68c681144e6113e1e13df8c818be3897cf7fa4a1e72fad5b011c305ae055",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "estate",
+            "title": "企业站 · 建筑地产 Estate",
+            "version": "1.0.1",
+            "desc": "深灰蓝 + 金色、沉稳大气。适用：房产 / 建筑 / 装修 / 地产开发。首页 Banner + 核心业务 + 精选项目 + 服务流程 + 最新动态 + 预约。",
+            "download": "https://ryeblog.com/cloud/themes/estate-1.0.1.zip",
+            "sha256": "58d4e69f6c619beb663f0421bdf0721d8340604e4f7c317910fd5992847883c6",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "example",
+            "title": "暖橙主题",
+            "version": "1.0.0",
+            "desc": "温暖的橙色调主题，适合个人博客",
+            "download": "https://ryeblog.com/cloud/themes/example-1.0.0.zip",
+            "sha256": "201d29fca8021abc60aa8c20d8cbc2bcd6feef7cfebad7340fbdcbc8c31ef5fd",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "food",
+            "title": "企业站 · 餐饮服务 Food",
+            "version": "1.0.1",
+            "desc": "暖色调、亲和力强。适用：餐厅 / 咖啡 / 烘焙 / 美容 / 家政 / 本地生活服务。首页 Hero + 招牌推荐 + 服务项目 + 门店信息 + 顾客评价 + 预约 CTA。",
+            "download": "https://ryeblog.com/cloud/themes/food-1.0.1.zip",
+            "sha256": "d18caad8b6a3ba9cf16fdf1719743bf52bf96deb25f0aea80df95c283afa77da",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "law",
+            "title": "企业站 · 法律咨询 Law",
+            "version": "1.0.1",
+            "desc": "深蓝 + 金、专业信任。适用：律所 / 法律咨询 / 企业法务。首页 Banner + 服务领域 + 律师团队 + 经典案例 + 法律常识 + 免费咨询。",
+            "download": "https://ryeblog.com/cloud/themes/law-1.0.1.zip",
+            "sha256": "a7c7a7b20a3fdc3c642fad06bb7649b5813358b0ec6abb117e609f11ef6ff942",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "med",
+            "title": "企业站 · 医疗健康 Med",
+            "version": "1.0.1",
+            "desc": "浅蓝 + 浅绿、专业安心。适用：医院 / 诊所 / 体检 / 医美。首页 Banner + 重点科室 + 专家团队 + 特色服务 + 健康科普 + 预约。",
+            "download": "https://ryeblog.com/cloud/themes/med-1.0.1.zip",
+            "sha256": "9775208677cf62c15631913fc577c0884fc0f297442f509295eaf693b4dc4d1f",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "tech",
+            "title": "企业站 · 科技 SaaS Tech",
+            "version": "1.0.1",
+            "desc": "深色科技蓝渐变、产品功能+解决方案。适用：软件 / SaaS / AI / 硬件 / 互联网公司。首页 Hero + 产品功能 + 解决方案 + 数据指标 + 案例 + 价格/联系。",
+            "download": "https://ryeblog.com/cloud/themes/tech-1.0.1.zip",
+            "sha256": "1ed5b9260a55bd07bb9ab9a8a3a414203857b18dab7b9525d98b057b0807f240",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "travel",
+            "title": "企业站 · 文旅酒店 Travel",
+            "version": "1.0.1",
+            "desc": "清新蓝绿 + 暖金、度假氛围。适用：景区 / 旅行社 / 酒店 / 民宿。首页 Banner + 热门目的地 + 精选线路 + 酒店住宿 + 攻略 + 咨询。",
+            "download": "https://ryeblog.com/cloud/themes/travel-1.0.1.zip",
+            "sha256": "dc50be57c37cf875cf03d795e98cd244205b5a4868f7194e938bc541e02e8777",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        },
+        {
+            "name": "vuecho",
+            "title": "Doc 文档主题",
+            "version": "2.0.2",
+            "desc": "三栏文档主题：左侧文档目录树 + 正文 + 右侧页内目录；首页文档封面；移动端抽屉目录。设计参考 Typecho 主题 Vuecho（MIT）",
+            "download": "https://ryeblog.com/cloud/themes/vuecho-2.0.2.zip",
+            "sha256": "c6126016b3d3f165ef0cde90d21a71662bfeb8ccfc152b39a3ca665a70b1bb3f",
+            "min_core": "1.0.0",
+            "updated": "2026-08-21"
+        }
+    ]
 }

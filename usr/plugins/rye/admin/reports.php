@@ -54,6 +54,7 @@ function ryebbs_rep_target($r)
 }
 
 adminHead('举报管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:1000px;margin:0 auto;padding:18px}

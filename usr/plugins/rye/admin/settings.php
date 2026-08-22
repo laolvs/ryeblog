@@ -61,6 +61,7 @@ $upImgExts = $rows_by_key['upload_ext_images'] ?? 'jpg,jpeg,png,gif,webp';
 $upFileExts= $rows_by_key['upload_ext_files'] ?? 'doc,docx,xls,xlsx,pdf,zip,rar,7z,txt,md';
 
 adminHead('论坛设置 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:760px;margin:0 auto;padding:18px}

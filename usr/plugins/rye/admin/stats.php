@@ -22,6 +22,7 @@ $topRef    = db_all("SELECT referer_domain, COUNT(*) c FROM {$P}stats WHERE refe
 $topBrowser= db_all("SELECT browser, COUNT(*) c FROM {$P}stats WHERE is_spider=0 GROUP BY browser ORDER BY c DESC LIMIT 6");
 
 adminHead('访问统计 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:1000px;margin:0 auto;padding:18px}

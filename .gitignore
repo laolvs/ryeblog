@@ -51,3 +51,6 @@ gpl3.txt
 
 # ===== 事故备份（filter-branch 后历史对象丢失，reflog 清单存档） =====
 /.git-backup-20260822/
+
+# 运行时缓存（整页缓存/搜索缓存等）
+/usr/cache/

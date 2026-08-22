@@ -41,6 +41,7 @@ $words = db_all("SELECT * FROM {$P}sensitive_words ORDER BY id DESC");
 $flash = get_flash();
 
 adminHead('敏感词管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:900px;margin:0 auto;padding:18px}

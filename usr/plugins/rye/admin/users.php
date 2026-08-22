@@ -55,6 +55,7 @@ function ryebbs_user_action($act, $uid, $label, $extra = '', $danger = false)
 }
 
 adminHead('用户管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:1100px;margin:0 auto;padding:18px}

@@ -46,29 +46,15 @@ class Plugin_rye
         echo '</ul>';
     }
 
-    /** 后台侧边栏菜单（挂在 adminHead 的 nav 之后） */
-    public static function adminMenu()
+    /**
+     * 后台菜单注册：启用时在「内容」组注入「RYE社区」入口。
+     * 规范：插件实现 admin_menu_<组key>() 静态方法返回 <li>…</li> 片段，
+     * 核心导航渲染时自动注入对应分组；未启用/未实现则不显示（热插拔）。
+     * 论坛自身的 10 个管理页由 inc/admin_nav.php 的 tab 条切换。
+     */
+    public static function admin_menu_content()
     {
-        $base = baseUrl('admin/plugin.php?p=rye&page=');
-        $items = [
-            'forums'        => '版块管理',
-            'content'       => '主题管理',
-            'users'         => '用户管理',
-            'medals'        => '勋章管理',
-            'reports'       => '举报管理',
-            'sensitive_words' => '敏感词',
-            'ip_bans'       => 'IP 封禁',
-            'invite_codes'  => '邀请码',
-            'stats'         => '访问统计',
-            'settings'      => '论坛设置',
-        ];
-        $html = '<div class="plugin-admin-group">';
-        $html .= '<div class="plugin-admin-group-title">RYE社区</div>';
-        foreach ($items as $pg => $label) {
-            $html .= '<a href="' . esc($base . $pg) . '">' . esc($label) . '</a>';
-        }
-        $html .= '</div>';
-        return $html;
+        return '<li><a href="' . esc(baseUrl('admin/plugin.php?p=rye&page=forums')) . '" class="admin-nav-sub-link">💬 ' . __('RYE社区') . '</a></li>';
     }
 
     /** 前台导航：注入"社区"链接 */

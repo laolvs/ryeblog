@@ -54,6 +54,7 @@ if ($threadId) {
     $thread = db_row("SELECT t.*, u.username FROM {$P}threads t LEFT JOIN vd_users u ON u.id=t.user_id WHERE t.id=?", [$threadId]);
     $posts  = db_all("SELECT p.*, u.username FROM {$P}posts p LEFT JOIN vd_users u ON u.id=p.user_id WHERE p.thread_id=? ORDER BY p.floor ASC", [$threadId]);
     adminHead('回复管理 · RYE社区');
+    require __DIR__ . '/inc/admin_nav.php';
     ?>
     <div class="mt-admin-wrap">
         <p><a class="btn-sm" href="?p=rye&page=content">← 返回主题列表</a></p>
@@ -107,6 +108,7 @@ function ryebbs_thread_action($act, $id, $label, $danger = false, $threadId = 0)
 }
 
 adminHead('内容管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:1100px;margin:0 auto;padding:18px}

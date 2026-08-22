@@ -48,6 +48,7 @@ $medals = db_all("SELECT m.*, (SELECT COUNT(*) FROM {$P}user_medals um WHERE um.
 $flash = get_flash();
 
 adminHead('勋章管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:900px;margin:0 auto;padding:18px}

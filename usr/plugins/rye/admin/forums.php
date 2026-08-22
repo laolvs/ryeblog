@@ -167,6 +167,7 @@ foreach ($forums as $f) {
 $flash = get_flash();
 
 adminHead('版块管理 · RYE社区');
+require __DIR__ . '/inc/admin_nav.php';
 ?>
 <style>
 .mt-admin-wrap{max-width:980px;margin:0 auto;padding:18px}
