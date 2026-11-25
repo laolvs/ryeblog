@@ -1,0 +1,14 @@
+{
+  "name": "inkwell-cf",
+  "version": "1.0.0",
+  "description": "Inkwell Blog - Cloudflare Pages + D1 edition",
+  "scripts": {
+    "dev": "npx wrangler pages dev . --local",
+    "deploy": "npx wrangler pages deploy .",
+    "db:init": "npx wrangler d1 execute inkwell-db --local --file=schema/init.sql",
+    "db:seed": "npx wrangler d1 execute inkwell-db --local --file=schema/seed.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
