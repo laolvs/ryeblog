@@ -1,0 +1,8 @@
+name = "inkwell-blog"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "inkwell-db"
+database_id = "b2598bea-0132-4b18-a723-322d645d14fd"
